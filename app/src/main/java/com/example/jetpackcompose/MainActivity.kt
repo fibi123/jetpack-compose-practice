@@ -29,8 +29,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingImage(message = stringResource(R.string.android_text),
-                                 from = stringResource(R.string.me),
+                    GreetingImage(title = stringResource(R.string.title),
+                                 para1 = stringResource(R.string.para1),
+                                 para2 = stringResource(R.string.para2),
                                  modifier = Modifier.padding(8.dp))
                 }
             }
@@ -39,39 +40,51 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+fun GreetingText(title: String, para1: String, para2: String, modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
         Text(
-            text = message,
-            fontSize = 100.sp,
+            text = title,
+            fontSize = 24.sp,
             lineHeight = 116.sp,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Left,
+            modifier = Modifier
+                       .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp)
         )
         Text(
-            text = from,
-            fontSize = 36.sp,
+            text = para1,
+            fontSize = 16.sp,
+            textAlign = TextAlign.Justify,
             modifier = Modifier
-                .padding(top = 16.dp)
-                .align(alignment = Alignment.CenterHorizontally)
+                .padding(start = 16.dp, end = 16.dp)
+        )
+        Text(
+            text = para2,
+            fontSize = 16.sp,
+            textAlign = TextAlign.Justify,
+            modifier = Modifier
+                .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp)
         )
     }
 }
 
 @Composable
-fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
-      val image = painterResource(R.drawable.androidparty)
-      Box(modifier) {
+fun GreetingImage(title: String, para1: String, para2: String, modifier: Modifier = Modifier) {
+      val image = painterResource(R.drawable.bg_compose_background)
+      Column(modifier = modifier.fillMaxSize()) {
           Image(
               painter = image,
               contentDescription = null,
-              contentScale = ContentScale.Crop,
+              contentScale = ContentScale.Fit,
+              modifier = Modifier
+                        .fillMaxWidth(),
               alpha = 0.5F
           )
-          GreetingText(message = message,
-              from = from,
+          GreetingText(title = title,
+              para1 = para1,
+              para2 = para2,
               modifier = Modifier
                   .fillMaxSize()
                   .padding(8.dp))
@@ -83,8 +96,9 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 fun GreetingPreview() {
     JetpackComposeTheme {
         GreetingImage(
-            message = stringResource(R.string.android_text),
-            from = stringResource(R.string.me)
+            title = stringResource(R.string.title),
+            para1 = stringResource(R.string.para1),
+            para2 = stringResource(R.string.para2)
         )
     }
 }
