@@ -42,13 +42,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(title: String, para1: String, para2: String, modifier: Modifier = Modifier) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.Start,
         modifier = modifier
     ) {
         Text(
             text = title,
             fontSize = 24.sp,
-            lineHeight = 116.sp,
             textAlign = TextAlign.Left,
             modifier = Modifier
                        .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 16.dp)
