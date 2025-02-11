@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.airbnb.android:lottie-compose:6.6.2@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/37b34b9cdaa781b2baa3e77b31e8ce98/transformed/lottie-compose-6.6.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/37b34b9cdaa781b2baa3e77b31e8ce98/transformed/lottie-compose-6.6.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
